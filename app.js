@@ -99,8 +99,7 @@ function addMember(res) {
 
 function addEngineer() {
     inquirer.prompt(engQuestions).then(response2 => {
-        console.log(response2);
-        // need if statement for addMember === yes
+        addMember(response2);
     });
 }
 
