@@ -45,13 +45,14 @@ const questions = [
         name: "addMember",
         choices: ["Yes", "No"]
     },
-    {
-        type: "list",
-        message: "Which team member would you like to add?",
-        name: "position",
-        choices: ["Engineer", "Intern"]
-    }
 ];
+
+const newMember = {
+    type: "list",
+    message: "Which team member would you like to add?",
+    name: "position",
+    choices: ["Engineer", "Intern"]
+};
 
 const engQuestions = [
     questions[1],
@@ -62,8 +63,7 @@ const engQuestions = [
         message: "Team Member GitHub: ",
         name: "github"
     },
-    questions[5],
-    questions[6]
+    questions[5]
 ];
 
 const intQuestions = [
@@ -75,8 +75,7 @@ const intQuestions = [
         message: "Team Member School: ",
         name: "school"
     },
-    questions[5],
-    questions[6]
+    questions[5]
 ];
 
 inquirer.prompt(questions).then(response1 => {
