@@ -40,16 +40,6 @@ const questions = [
         name: "officeNumber"
     },
     {
-        type: "input",
-        message: "Team Member GitHub: ",
-        name: "github"
-    },
-    {
-        type: "input",
-        message: "Team Member School: ",
-        name: "school"
-    },
-    {
         type: "list",
         message: "Would you like to add another team member?",
         name: "addMember",
@@ -61,7 +51,33 @@ const questions = [
         name: "position",
         choices: ["Engineer", "Intern"]
     }
-]
+];
+
+const engQuestions = [
+    questions[1],
+    questions[2],
+    questions[3],
+    {
+        type: "input",
+        message: "Team Member GitHub: ",
+        name: "github"
+    },
+    questions[5],
+    questions[6]
+];
+
+const intQuestions = [
+    questions[1],
+    questions[2],
+    questions[3],
+    {
+        type: "input",
+        message: "Team Member School: ",
+        name: "school"
+    },
+    questions[5],
+    questions[6]
+];
 
 // and to create objects for each team member (using the correct classes as blueprints!)
 
