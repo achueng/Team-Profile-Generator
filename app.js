@@ -10,8 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-
-// Write code to use inquirer to gather information about the development team members,
+// All questions to be used in inquirer prompt
 const questions = [
     {
         type: "list",
@@ -78,10 +77,15 @@ const intQuestions = [
     questions[5]
 ];
 
+// Declare array for all the team member objects to be pushed into
+let employees = [];
+
 init();
 
+// Prompt the user for manager info, and create an object using the Manager class
 function init() {
     inquirer.prompt(questions).then(response1 => {
+        const manager = new Manager(response1.name, response1.id, response1.email, response1.officeNumber);
         addMember(response1);
     });
 }
@@ -109,6 +113,7 @@ function addIntern() {
     });
 }
 
+// Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required above)
