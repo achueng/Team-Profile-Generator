@@ -82,15 +82,19 @@ init();
 
 function init() {
     inquirer.prompt(questions).then(response1 => {
-        if (response1.addMember === "Yes") {
-            inquirer.prompt(newMember).then(response => {
-                if (response.position === "Engineer") {
-                    addEngineer();
-                }
-                else addIntern();
-            });
-        }
+        addMember(response1);
     });
+}
+
+function addMember(res) {
+    if (res.addMember === "Yes") {
+        inquirer.prompt(newMember).then(response => {
+            if (response.position === "Engineer") {
+                addEngineer();
+            }
+            else addIntern();
+        });
+    }
 }
 
 function addEngineer() {
