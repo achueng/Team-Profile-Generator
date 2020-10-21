@@ -85,7 +85,9 @@ init();
 // Prompt the user for manager info, and create an object using the Manager class
 function init() {
     inquirer.prompt(questions).then(response1 => {
-        const manager = new Manager(response1.name, response1.id, response1.email, response1.officeNumber);
+        let manager = new Manager(response1.name, response1.id, response1.email, response1.officeNumber);
+        employees.push(manager);
+        console.log(employees);
         addMember(response1);
     });
 }
