@@ -104,8 +104,9 @@ function addEngineer() {
 }
 
 function addIntern() {
-    console.log("Yay!");
-    // inquirer.prompt().then();
+    inquirer.prompt(intQuestions).then(response3 => {
+        addMember(response3);
+    });
 }
 
 // and to create objects for each team member (using the correct classes as blueprints!)
