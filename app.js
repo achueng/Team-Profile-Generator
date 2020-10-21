@@ -12,10 +12,61 @@ const render = require("./lib/htmlRenderer");
 
 
 // Write code to use inquirer to gather information about the development team members,
+const questions = [
+    {
+        type: "list",
+        message: "Which team member would you like to add? A team mangager must be added before adding other team members.",
+        name: "manager",
+        choices: ["Manager"]
+    },
+    {
+        type: "input",
+        message: "Team Member Name: ",
+        name: "name"
+    },
+    {
+        type: "input",
+        message: "Team Member ID: ",
+        name: "id"
+    },
+    {
+        type: "input",
+        message: "Team Member Email: ",
+        name: "email"
+    },
+    {
+        type: "input",
+        message: "Manager Office Number: ",
+        name: "officeNumber"
+    },
+    {
+        type: "input",
+        message: "Team Member GitHub: ",
+        name: "github"
+    },
+    {
+        type: "input",
+        message: "Team Member School: ",
+        name: "school"
+    },
+    {
+        type: "list",
+        message: "Would you like to add another team member?",
+        name: "addMember",
+        choices: ["Yes", "No"]
+    },
+    {
+        type: "list",
+        message: "Which team member would you like to add?",
+        name: "position",
+        choices: ["Engineer", "Intern"]
+    }
+]
+
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
+// After the user has input all employees desired, call the `render` function (required above)
+// and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
 
 // After you have your html, you're now ready to create an HTML file using the HTML
@@ -28,8 +79,7 @@ const render = require("./lib/htmlRenderer");
 // information; write your code to ask different questions via inquirer depending on
 // employee type.
 
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
+// HINT: make sure to build out your classes first! Remember that your Manager, Engineer, and Intern classes should all extend from a class named Employee
+// Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
+// for the provided `render` function to work! 
