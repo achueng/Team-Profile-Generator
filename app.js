@@ -78,9 +78,24 @@ const intQuestions = [
     questions[5]
 ];
 
-inquirer.prompt(questions).then(response1 => {
-    console.log(response1);
-});
+init();
+
+function init() {
+    inquirer.prompt(questions).then(response1 => {
+        if (response1.addMember === "Yes") {
+            inquirer.prompt(newMember).then(response => {
+                if (response.position === "Engineer") {
+                    addEngineer();
+                }
+            });
+        }
+    });
+}
+
+function addEngineer() {
+    console.log("Yay!");
+    // inquirer.prompt().then();
+}
 
 // and to create objects for each team member (using the correct classes as blueprints!)
 
