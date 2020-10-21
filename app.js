@@ -87,12 +87,18 @@ function init() {
                 if (response.position === "Engineer") {
                     addEngineer();
                 }
+                else addIntern();
             });
         }
     });
 }
 
 function addEngineer() {
+    console.log("Yay!");
+    // inquirer.prompt().then();
+}
+
+function addIntern() {
     console.log("Yay!");
     // inquirer.prompt().then();
 }
