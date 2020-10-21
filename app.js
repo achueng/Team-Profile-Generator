@@ -79,6 +79,10 @@ const intQuestions = [
     questions[6]
 ];
 
+inquirer.prompt(questions).then(response1 => {
+    console.log(response1);
+});
+
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required above)
