@@ -4,6 +4,8 @@
 
   This project creates a team profile for a team manager, which stores the team members' positions, name, id, email, and role specific information. The team profile is written in a HTML file through this command line application.
 
+  ![Team Profile Preview](./assets/team-profile-demo.png)
+
   ## Table of Contents
   1. [Installation](#Installation)
   2. [Usage](#Usage)
