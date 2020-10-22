@@ -91,6 +91,7 @@ function init() {
     });
 }
 
+// Prompt user for adding another team member
 function addMember(res) {
     if (res.addMember === "Yes") {
         inquirer.prompt(newMember).then(response => {
@@ -100,8 +101,13 @@ function addMember(res) {
             else addIntern();
         });
     }
+    else {
+        // Creates html file based on info in array after user selects "No" to adding more members
+        render(employees);
+    }
 }
 
+// Prompt user for adding engineer, then create a new Engineer object and pushing it to employees array
 function addEngineer() {
     inquirer.prompt(engQuestions).then(response2 => {
         let engineer= new Engineer(response2.name, response2.id, response2.email, response2.github);
@@ -110,6 +116,7 @@ function addEngineer() {
     });
 }
 
+// Prompt user for adding intern, then create a new Intern object and pushing it to employees array
 function addIntern() {
     inquirer.prompt(intQuestions).then(response3 => {
         let intern= new Intern(response3.name, response3.id, response3.email, response3.school);
