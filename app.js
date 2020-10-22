@@ -112,6 +112,8 @@ function addEngineer() {
 
 function addIntern() {
     inquirer.prompt(intQuestions).then(response3 => {
+        let intern= new Intern(response3.name, response3.id, response3.email, response3.school);
+        employees.push(intern);
         addMember(response3);
     });
 }
