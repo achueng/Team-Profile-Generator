@@ -19,6 +19,9 @@
   ## Usage
 
   The user will be prompted a series of questions about the team members. Once all team members' information are inputted by the user, the user can answer 'No' to the question asking if the user would like to add any more team members. Then, a HTML file will be created with all the information from the user's input.
+  
+  Please see this video for a walkthrough of how to use this application:
+  [Team Profile Generator Demo](https://youtu.be/Xab_dXLXHhU)
 
   ## License
 
