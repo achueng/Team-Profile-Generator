@@ -87,7 +87,6 @@ function init() {
     inquirer.prompt(questions).then(response1 => {
         let manager = new Manager(response1.name, response1.id, response1.email, response1.officeNumber);
         employees.push(manager);
-        console.log(employees);
         addMember(response1);
     });
 }
@@ -105,6 +104,8 @@ function addMember(res) {
 
 function addEngineer() {
     inquirer.prompt(engQuestions).then(response2 => {
+        let engineer= new Engineer(response2.name, response2.id, response2.email, response2.github);
+        employees.push(engineer);
         addMember(response2);
     });
 }
