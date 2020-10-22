@@ -91,22 +91,6 @@ function init() {
     });
 }
 
-// Prompt user for adding another team member
-function addMember(res) {
-    if (res.addMember === "Yes") {
-        inquirer.prompt(newMember).then(response => {
-            if (response.position === "Engineer") {
-                addEngineer();
-            }
-            else addIntern();
-        });
-    }
-    else {
-        // Creates html file based on info in array after user selects "No" to adding more members
-        render(employees);
-    }
-}
-
 // Prompt user for adding engineer, then create a new Engineer object and pushing it to employees array
 function addEngineer() {
     inquirer.prompt(engQuestions).then(response2 => {
@@ -124,6 +108,28 @@ function addIntern() {
         addMember(response3);
     });
 }
+
+// Prompt user for adding another team member
+function addMember(res) {
+    if (res.addMember === "Yes") {
+        inquirer.prompt(newMember).then(response => {
+            if (response.position === "Engineer") {
+                addEngineer();
+            }
+            else addIntern();
+        });
+    }
+    else {
+        // Creates html file based on info in array after user selects "No" to adding more members
+        let html = render(employees);
+        fs.writeFile(outputPath, html, error => {
+            if (error) throw error;
+            else console.log("Your Team Profile has been successfully created!");
+        });
+    }
+}
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
